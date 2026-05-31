@@ -131,10 +131,11 @@ pip install -r requirements.txt
 3. Open the notebook:
 
 ```bash
-jupyter notebook 2.-power-quality-fault-detection.ipynb
+jupyter notebook fault_detection.ipynb
 ```
 
 4. Run all cells to:
+
 - load and preprocess the data,
 - train the neural network,
 - visualize learning curves,
