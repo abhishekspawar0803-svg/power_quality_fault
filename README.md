@@ -103,6 +103,34 @@ The notebook includes a full training workflow with:
 
 The confusion matrix shows how well the model distinguishes between the different power quality fault classes.
 
+### Results & Metrics
+
+The model was trained for **200 epochs** on a 80/20 train-test split of the 2367-sample dataset.
+
+**Final Performance:**
+
+- **Test Accuracy:** 100% (achieved and sustained from ~Epoch 52 onward)
+- **Training Accuracy:** Consistently 97.30%–100% in later epochs
+- **Test Loss (final):** ~0.0013 (Epoch 199)
+
+**Convergence summary:**
+
+- Epoch 0: train acc 27.03%, test acc 19.23%
+- Epoch 8: test acc reached 96.15% for the first time
+- Epoch 33: model first hits 100% test accuracy
+- Epoch 52 onward: test accuracy stable at 96.15%–100%
+
+**Fault Classes (5-class classification):**
+| Label | Fault Type |
+|:---:|:---|
+| 0 | Normal |
+| 1 | Sag |
+| 2 | Swell |
+| 3 | Transient |
+| 4 | Harmonics |
+
+> The model converges cleanly on feature-engineered electrical measurements (RMS voltage, THD, DWT energies, entropy, SNR), demonstrating that tabular signal features are sufficient for reliable multiclass power quality fault detection without raw waveform processing.
+
 ## Repository Structure
 
 ```bash
